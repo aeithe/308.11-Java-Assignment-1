@@ -39,6 +39,8 @@ const n4 = 5;
 // but it SHOULD NOT be done this way. As programmers,
 // we break things into small, manageable pieces so that
 // they can be better understood, scaled, and maintained.
+
+
 /**const dontDoThis = ((n1 + n2 + n3 + n4) == 50) && 
   ((n1 % 2) + (n2 % 2) + (n3 % 2) + (n4 % 2) >= 2) && 
   !(n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25) && 
@@ -85,3 +87,55 @@ const under25 = n1 < 25 && n2 < 25 && n3 < 25 && n4 < 25;
 
 //checked if under 25
 console.log(`The selected numbers are all under 25: ${under25}.`);
+
+
+/**
+ * The distance of the trip, in total, is 1,500 miles.
+Your car’s fuel efficiency is as follows:
+At 55 miles per hour, you get 30 miles per gallon.
+At 60 miles per hour, you get 28 miles per gallon.
+At 75 miles per hour, you get 23 miles per gallon.
+You have a fuel budget of $175.
+The average cost of fuel is $3 per gallon.
+Set up a program to answer the following questions:
+How many gallons of fuel will you need for the entire trip?
+Will your budget be enough to cover the fuel expense?
+How long will the trip take, in hours?
+Compare the results when traveling at an average of 55, 60, and 75 miles per hour. Which makes the most sense for the trip?
+Log the results of your calculations using string concatenation or template literals.
+ */
+
+const totalTrip = 1500;
+const costOfFuel = 3; 
+const fuelBudget = 175;
+const scenario1 = 55/30;
+const scenario2 = 60/28;
+const scenario3 = 75/23;
+
+const hoursTrip1 = totalTrip/55;
+const hoursTrip2 = totalTrip/60;
+const hoursTrip3 = totalTrip/75;
+
+const gallonsTrip1 = hoursTrip1*scenario1
+const gallonsTrip2 = hoursTrip2*scenario2
+const gallonsTrip3 = hoursTrip3*scenario3
+
+const costTrip1 = gallonsTrip1*3;
+const costTrip2 = gallonsTrip2*3;
+const costTrip3 = gallonsTrip3*3;
+
+let trip1InBudget = costTrip1 <= fuelBudget
+let trip2InBudget = costTrip2 <= fuelBudget
+let trip3InBudget = costTrip3 <= fuelBudget
+
+console.log(`For the first scenario, going 55 mPH, the entire trip will take you ${hoursTrip1} hours, ${gallonsTrip1} \
+gallons, with a total cost of ${costTrip1} dollars - not exceeding the budget: ${trip1InBudget}.`);
+console.log(`For the second scenario, going 60 mPH, the entire trip will take you ${hoursTrip2} hours, ${gallonsTrip2} \
+gallons, with a total cost of ${costTrip2} dollars - not exceeding the budget: ${trip2InBudget}.`);
+console.log(`For the third scenario, going 75 mPH, the entire trip will take you ${hoursTrip3} hours, ${gallonsTrip3} \
+gallons, with a total cost of ${costTrip3} dollars - not exceeding the budget: ${trip3InBudget}.`);
+
+
+  
+
+
